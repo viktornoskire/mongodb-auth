@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import { Provider } from './provider';
 
 export const metadata: Metadata = {
   title: 'Next Auth',
@@ -13,10 +11,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <Provider>
-        <body className={`antialiased`}>{children}</body>
-      </Provider>
-    </html>
+    <main className={`antialiased flex flex-col items-center justify-center min-h-screen`}>
+      <h1>Profile Page</h1>
+      {children}
+    </main>
   );
 }
