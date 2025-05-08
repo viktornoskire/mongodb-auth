@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+import mongoose, { Schema, model } from 'mongoose';
 
 export interface UserDocument {
   _id: string;
@@ -9,11 +9,11 @@ export interface UserDocument {
   udatedAt: Date;
 }
 
-const UserSchema = new mongoose.Schema<UserDocument>(
+const UserSchema = new Schema<UserDocument>(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, 'Name is required'],
     },
     email: {
       type: String,
